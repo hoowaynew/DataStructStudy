@@ -128,7 +128,7 @@ public class LinkList<E> {
     // 向中间位置插入元素
     public void add(E e, int index) {
         if (index < 0 && index > size) {
-            throw new IllegalArgumentException("add fail, the index is illegal!");
+            throw new IllegalArgumentException("Add fail, the index is illegal!");
         }
 
         Node prev = dumHead;
@@ -156,7 +156,7 @@ public class LinkList<E> {
     // 获取某个索引的元素
     public E getElement(int index) {
         if (index < 0 && index >= size)
-            throw new IllegalArgumentException("get fail, the index is illegal!");
+            throw new IllegalArgumentException("Get fail, the index is illegal!");
 
         Node cur = dumHead.next;
         for (int i = 0; i < index; i++) {
@@ -186,6 +186,43 @@ public class LinkList<E> {
             cur = cur.next;
         }
         return false;
+    }
+
+    // 修改指定索引元素
+    public void set(E e, int index) {
+        if (index < 0 && index >= size)
+            throw new IllegalArgumentException("Set fail, the index is illegal!");
+        Node cur = dumHead.next;
+        for (int i = 0; i < index; i++) {
+            cur = cur.next;
+        }
+        cur.e = e;
+    }
+
+    // 删除链表指定索引的元素并返回该元素
+    public E remove(int index) {
+        if (index < 0 && index >= size)
+            throw new IllegalArgumentException("Remove fail, the index is illegal!");
+        Node prev = dumHead;
+        for (int i = 0; i < index; i++) {
+            prev = prev.next;
+        }
+        Node cur = prev.next;
+        prev.next = cur.next;
+        cur.next = null;
+
+        size--;
+        return (E) cur.e;
+    }
+
+    // 删除链表头节点的元素并返回该元素
+    public E removeFirst() {
+        return remove(0);
+    }
+
+    // 删除链表尾节点的元素并返回该元素
+    public E removeLast() {
+        return remove(size-1);
     }
 
     // 复写toString方法

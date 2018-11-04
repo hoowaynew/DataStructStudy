@@ -18,5 +18,20 @@ public class DemoMain {
 
         System.out.println(list);
         System.out.println(list.contains(110));
+
+        list.set(120,1);
+        System.out.println(list);
+
+        list.remove(3);
+        System.out.println(list);
+
+        list.removeFirst();
+        System.out.println(list);
+
+        list.removeLast();
+        System.out.println(list);
+
+        list.addFirst(10);
+        System.out.println(list);
     }
 }
