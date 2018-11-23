@@ -32,4 +32,11 @@ public class BSTSet<E extends Comparable<E>> implements MySet<E>{
     public boolean isEmpty() {
         return bfs.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        return "BSTSet{" +
+                "bfs=" + bfs +
+                '}';
+    }
 }
