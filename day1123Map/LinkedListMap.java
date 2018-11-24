@@ -1,5 +1,7 @@
 package cn.itcast.day1123Map;
 
+import java.util.Objects;
+
 public class LinkedListMap<K, V> implements Map<K, V> {
 
     // 节点内部类
