@@ -9,8 +9,8 @@ public class Main {
 
         BSTSet<Integer> integerBSTSet = new BSTSet<>();
         ArrayList<String> words = new ArrayList<>();
-        FileOperation.readFile("a-tale-of-two-cities.txt", words);
-        System.out.println(new File("pride-and-prejudice.txt").exists());
+        FileOperation.readFile("D:\\IdeaProject\\DataStructure\\Demo02Array\\DynamicArray\\src\\cn\\itcast\\a-tale-of-two-cities.txt", words);
+//        System.out.println(new File("D:\\IdeaProject\\DataStructure\\Demo02Array\\DynamicArray\\src\\cn\\itcast\\pride-and-prejudice.txt").exists());
 
         System.out.println(words.size());
 //        File file = new File("pride-and-prejudice.txt");
