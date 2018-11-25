@@ -4,17 +4,17 @@ public class BSTMain {
 
     public static void main(String[] args) {
         BSTMap<String,Integer> bstMap = new BSTMap<>();
-        bstMap.add("hello",1);
-        bstMap.add("hi",2);
+        bstMap.add("hello",222);
+        bstMap.add("hey",2);
         bstMap.add("java",3);
         bstMap.add("python",4);
-        bstMap.set("hi",100);
+        bstMap.set("hey",10);
         System.out.println(bstMap.getSize());
-        System.out.println(bstMap.get("hi"));
+        System.out.println(bstMap.get("hey"));
 
-        System.out.println();
-        String key = bstMap.removeMin();
-        System.out.println(key + ":" + bstMap.get(key));
-        System.out.println(bstMap.contains(key));
+        Integer rem = bstMap.remove("hello");
+        System.out.println(rem);
+
+        System.out.println(bstMap.getSize());
     }
 }
