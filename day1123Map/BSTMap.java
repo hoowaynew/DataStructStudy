@@ -73,12 +73,12 @@ public class BSTMap<K extends Comparable<K>,V> implements Map<K, V> {
         return node;
     }
 
-    // 删除以node为根节点的二分搜索树的最小节点
-    // 返回删除节点后新的二分搜索树的根
     public K removeMin(){
         return removeMin(root).key;
     }
 
+    // 删除以node为根节点的二分搜索树的最小节点
+    // 返回删除节点后新的二分搜索树的根
     private Node removeMin(Node node) {
         if(node == null)
             return null;
