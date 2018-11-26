@@ -8,7 +8,10 @@ package cn.itcast.day1125MaxHeap;
 *   4，右孩子索引是父亲节点索引(parentIndex * 2 + 2);
 * */
 
+import cn.itcast.day1029Queue.Array;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MaxHeap<E extends Comparable<E>> {
 
@@ -20,6 +23,25 @@ public class MaxHeap<E extends Comparable<E>> {
 
     public MaxHeap(int capacity) {
         data = new ArrayList<>(capacity);
+    }
+
+    // heapify: 将一个数组转化成一个最大堆，思路：
+    // 默认初始数组就是一个乱序堆，然后对此堆进行排序处理(从最后一个叶子节点的父亲节点往根节点依次下沉操作)
+    public MaxHeap(E[] list, boolean isHeapify) {
+        data = new ArrayList<>();
+        if (isHeapify) {
+            data.addAll(Arrays.asList(list));
+//            for (int i = 0; i < list.length; i++) {
+//                data.add(i,list[i]);
+//            }
+            for (int i = parent(list.length - 1); i >= 0; i--) {
+                siftDown(i);
+            }
+        } else {
+            for (E e : list) {
+                add(e);
+            }
+        }
     }
 
     public int size() {
@@ -99,9 +121,17 @@ public class MaxHeap<E extends Comparable<E>> {
     }
 
     // 获取堆中的最大值
-    private E findMax() {
+    public E findMax() {
         if (data.isEmpty())
             throw new IllegalArgumentException("The MaxHeap is empty!");
         return data.get(0);
+    }
+
+    // 将元素e替换最大堆中的最大元素，并保持堆结构稳定
+    public E replace(E e) {
+        E max = findMax();
+        data.set(0,e);
+        siftDown(0);
+        return max;
     }
 }
