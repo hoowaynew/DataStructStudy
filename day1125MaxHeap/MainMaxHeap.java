@@ -48,7 +48,7 @@ public class MainMaxHeap {
             array1[i] = random.nextInt(Integer.MAX_VALUE);
         }
         MaxHeap<Integer> maxHeap1 = new MaxHeap<>(array1, true);
-        for (int i = 0; i < maxHeap.size(); i++) {
+        for (int i = 0; i < n; i++) {
             array1[i] = maxHeap.extractMax();
         }
 
