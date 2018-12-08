@@ -12,13 +12,17 @@ public class Main {
         LinkedListMap<String,Integer> map = new LinkedListMap<>();
         BSTSet<String> bstSet = new BSTSet<>();
         ArrayList<String> words = new ArrayList<>();
+        BSTMap<String,Integer> bstMap = new BSTMap<>();
         FileOperation.readFile("D:\\IdeaProject\\DataStructure\\Demo02Array\\DynamicArray\\src\\cn\\itcast\\a-tale-of-two-cities.txt", words);
 //        System.out.println(new File("D:\\IdeaProject\\DataStructure\\Demo02Array\\DynamicArray\\src\\cn\\itcast\\pride-and-prejudice.txt").exists());
         System.out.println(words.size());
 //        File file = new File("pride-and-prejudice.txt");
         for (String word : words) {
             bstSet.add(word);
+            bstMap.add(word,0);
         }
+        System.out.println(bstMap.getSize());
+//        System.out.println(bstSet.getSize());
 
         for (String word : words) {
             if(!map.contains(word)) {
