@@ -40,5 +40,14 @@ public class Main2 {
         }
         end = System.nanoTime();
         System.out.println("RBTree test: " + (end-start)/1000000000.0 + "s");
+
+        // Test RightRBTree
+        start = System.nanoTime();
+        RightRBTree<Integer, Integer> rrbTree = new RightRBTree<>();
+        for (Integer integer : list) {
+            rrbTree.add(integer,null);
+        }
+        end = System.nanoTime();
+        System.out.println("RightRBTree test: " + (end-start)/1000000000.0 + "s");
     }
 }
