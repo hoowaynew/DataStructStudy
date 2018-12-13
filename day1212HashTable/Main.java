@@ -95,6 +95,25 @@ public class Main {
 
             time = (endTime - startTime) / 1000000000.0;
             System.out.println("HashTable: " + time + " s");
+
+            // Test HashTableNew
+            startTime = System.nanoTime();
+
+            HashTableNew<String, Integer> htn = new HashTableNew<>();
+            for (String word : words) {
+                if (htn.contains(word))
+                    htn.set(word, htn.get(word) + 1);
+                else
+                    htn.add(word, 1);
+            }
+
+            for (String word : words)
+                htn.contains(word);
+
+            endTime = System.nanoTime();
+
+            time = (endTime - startTime) / 1000000000.0;
+            System.out.println("HashTableNew: " + time + " s");
         }
     }
 
